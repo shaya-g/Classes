@@ -92,21 +92,25 @@ constructor(name, disposition) {
   this.name = name;
   this.disposition = disposition;
   this.age = 0;
-  if (this.age >= 33){this.isAdult = true}
-  else {this.isAdult = false};
-  if (this.age >= 101){this.isOld = true}
-  else {this.isOld = false};
+  this.isAdult = false;
+  this.isOld = false;
   if (this.name === "Frodo"){this.hasRing = true}
   else {this.hasRing = false};
 }
 
 celebrateBirthday(Age) {
   this.age = Age + 1
-}
-}
+  if (Age >= 33){this.isAdult = true}
+  else {this.isAdult = false};
+  if (Age >= 101){this.isOld = true}
+  else {this.isOld = false};
+}}
 
 var hobbit1 = new Hobbit("Frodo", "sad");
 console.log(hobbit1);
 
 hobbit1.celebrateBirthday(33);
+console.log(hobbit1);
+
+hobbit1.celebrateBirthday(150);
 console.log(hobbit1);
